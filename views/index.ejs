@@ -1,0 +1,25 @@
+<%- include ('partials/header.ejs')%> 
+<body>
+    <%- include ('partials/navbar.ejs')%>
+
+   <div class="container">
+       
+    <hr>
+    <h1>Perguntar</h1>
+    <hr>
+    <a href="/perguntar" class="btn btn-primary"> perguntar</a>
+<hr>
+       <% perguntas.forEach(pergunta =>{ %>   <!-- laço para percorrer o array -->
+        <div class="card">
+            <div class="card-body">
+                <h3><%= pergunta.titulo %></h3>     <!-- variavel sendo exibida-->
+            </div>
+            <div class="card-footer">
+                <a href="/pergunta/<%= pergunta.id %>" class="btn btn-primary"> responder</a>
+            </div>
+        </div>
+      <%  }) %>  <!-- fim do laco com ejs-->
+
+   </div>
+</body>
+<%- include ('partials/footer.ejs')%>
